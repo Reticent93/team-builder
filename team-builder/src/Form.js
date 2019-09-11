@@ -21,13 +21,13 @@ const Form = (props) => {
 
 		
 		console.log('handle',newTeam);
-		// resetForm(e)
+		resetForm(e)
 	};
 
 
-	// const resetForm = () => {
-	// 	setNewTeam(initialTeam);
-	// };
+	const resetForm = () => {
+		setNewTeam(initialTeam);
+	};
 
 	return (
 		
@@ -37,9 +37,9 @@ const Form = (props) => {
 				<input onChange={handleChange} type="text" name="role" placeholder="Role" value= {newTeam.role}  />
 				{/* <textarea name = 'body'  /> */}
 				<button type="submit">Submit</button>
-				{/* <button type="reset" onClick={resetForm}>
+				<button type="reset" onClick={resetForm}>
 					Reset
-				</button> */}
+				</button>
 			</form>
 			
 		
