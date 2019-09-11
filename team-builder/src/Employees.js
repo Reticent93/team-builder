@@ -7,15 +7,16 @@ const Employees =(props) => {
     return(
        
         
-       
-            <div className = 'note' >
-                <h2>{props.title}</h2>
-                <h2>{props.email}</h2>
-                <h2>{props.role}</h2>
+       <>
+           {props.notes.map((note, index) => (
+            <div className = 'note' key={index}>
+                <h2>{note.title}</h2>
+                <h2>{note.email}</h2>
+                <h2>{note.role}</h2>
             
-        
-
-        </div>
+                </div>
+))}
+        </>
     )
 }
 export default Employees;
