@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 
 const Form = (props) => {
+	console.log(props)
 	const initialTeam = { name: '', email: '', role: '' };
 	const [ newTeam, setNewTeam ] = useState(initialTeam);
 
@@ -12,15 +13,21 @@ const Form = (props) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		
-		// props.setNewTeam([newTeam, ...props.notes])
-		console.log('handle',newTeam);
-		resetForm(e)
-	};
-	// const updatedEmployee = props.setNewTeam([newTeam, ...props.notes]);
+		const newEmployee = {
+			...newTeam,
+			id: Date.now()
+		};
+		props.addNewEmployee(newEmployee);
 
-	const resetForm = () => {
-		setNewTeam(initialTeam);
+		
+		console.log('handle',newTeam);
+		// resetForm(e)
 	};
+
+
+	// const resetForm = () => {
+	// 	setNewTeam(initialTeam);
+	// };
 
 	return (
 		
@@ -30,9 +37,9 @@ const Form = (props) => {
 				<input onChange={handleChange} type="text" name="role" placeholder="Role" value= {newTeam.role}  />
 				{/* <textarea name = 'body'  /> */}
 				<button type="submit">Submit</button>
-				<button type="reset" onClick={resetForm}>
+				{/* <button type="reset" onClick={resetForm}>
 					Reset
-				</button>
+				</button> */}
 			</form>
 			
 		

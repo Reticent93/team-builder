@@ -7,14 +7,18 @@ import './App.css';
 
 function App() {
   const [note, newNote] = useState([{
-    name: '', 
-    email: '', 
-    role: ''}])
+    name: 'Dave Mack', 
+    email: 'WebDevDave@yahoo.com', 
+    role: 'Web Developer'}])
+
+   const addNewEmployee = data =>{
+     newNote([...note, data])
+   }
   
   return (
     <div className="App">
       <h1>Employees</h1>
- <Form notes={note} newNote={newNote} />
+ <Form notes={note} newNote={newNote}  addNewEmployee={addNewEmployee}/>
  <Employees notes={note} />
     </div>
   );

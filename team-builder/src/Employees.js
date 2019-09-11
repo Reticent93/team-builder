@@ -10,7 +10,7 @@ const Employees =(props) => {
        <>
            {props.notes.map((note, index) => (
             <div className = 'note' key={index}>
-                <h2>{note.title}</h2>
+                <h2>{note.name}</h2>
                 <h2>{note.email}</h2>
                 <h2>{note.role}</h2>
             
